@@ -1,5 +1,5 @@
   /*----- constants -----*/
-const frontTile = [
+const frontTileSource = [
   {name: 'HartPlaza', img: 'https://imgur.com/a/U0cpQxs', matched: false},
   {name: 'Riverwalk', img: 'https://imgur.com/94ZnTIq', matched: false},
   {name: 'Campus Martius', img: 'https://imgur.com/3CBSrIG', matched: false},
@@ -9,20 +9,31 @@ const frontTile = [
   {name: 'Casino Life', img: 'https://imgur.com/GVQjbwe', matched: false},
   {name: 'Rennaisance', img: 'https://imgur.com/wJsEKRp', matched: false},
 ];
-const backTile = 'https://imgur.com/a/VzY6lKF';
+const backTile = 'https://imgur.com/8vWmfMA';
 
   /*----- state variables -----*/
-let board;
+let board; //Array of 16 shuffled card objects
 let cardSelected;
+//let cards;
+//let firstCard;
 let winner;
 let loser;
 
   /*----- cached elements  -----*/
-
+const tileImgEl = document.querySelectorAll('main > img');
 
   /*----- event listeners -----*/
 
 
   /*----- functions -----*/
-  render ()
+  init () //initialize all state then call render()
+
+  function init() {
+    board = getShuffledTiles();
+    console.log(board);
+  }
   
+  function getShuffledTiles(){
+    const tempTiles = [];
+    const tiles = []
+  }
