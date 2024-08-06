@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 80vh;
+    margin: 0;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+}
+
+#headline {
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+}
+
+#timer {
+    margin-left: auto;
+}
+
+#level {
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+} 
+
+#matches {
+    align-items: right;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+h2 {
+text-align: center;
+}
+
+#board {
+    display: grid;
+
+    grid-template-columns: repeat(4, 20vmin);
+    grid-template-rows: repeat(4, 20vmin);
+    gap: 4vmin;
+    margin-top: 20px;
+}
+
+#board > div {
+    height: 20vmin;
+    width: 20vmin;
+    border-style: solid;
+}
