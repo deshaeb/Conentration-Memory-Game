@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     background-image: url('');
-    background-color: cornflowerblue;
+    background-color: rgb(99, 136, 211);
 }
 
 body {
@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
+    color:aliceblue;
 }
 
 header {
@@ -23,6 +24,11 @@ header {
     display: flex;
     align-content: space-between;
     justify-content: center;
+}
+
+.card {
+    background-image: url('../concentrationImg/tileBack.jpg');
+    background-size: contain;
 }
 
 #timer {
@@ -67,4 +73,5 @@ text-align: center;
 }
  #pause {
     margin-right: auto;
+    color: white;
  }
