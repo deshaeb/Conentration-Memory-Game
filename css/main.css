@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     background-image: url('');
-    background-color: rgb(99, 136, 211);
+    background-color: rgb(34, 53, 89);
 }
 
 body {
@@ -27,7 +27,7 @@ header {
 }
 
 .card {
-    background-image: url('../concentrationImg/tileBack.jpg');
+    /*background-image: url('../concentrationImg/tileBack.jpg');*/
     background-size: contain;
 }
 
