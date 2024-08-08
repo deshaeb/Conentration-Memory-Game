@@ -83,7 +83,7 @@ function handleChoice(event) {
   console.log(tileSelected1)
   console.log(tileSelected2)
   if (tileSelected1 && !tileSelected2) {
-    console.log('tile 1 true');
+    //console.log('tile 1 true');
     tileSelected2 = tile
     render()
     if (tileSelected1.img === tileSelected2.img) {
@@ -97,7 +97,6 @@ function handleChoice(event) {
     wrongTiles++;
     setTimeout(() => {
       render()
-
     }, 2000)}
   } else {
     tileSelected1 = tile
