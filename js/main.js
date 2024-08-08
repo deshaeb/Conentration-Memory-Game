@@ -14,11 +14,14 @@ const backTile = 'concentrationImg/tileBack.jpg';
   /*----- state variables -----*/
 let tiles; //Array of 16 shuffled card objects
 let tileSelected; //first tile clicked (tile object) or null
+let ignoreClicks;
+let wrongTiles;
+let timer;
 let winner;
 let loser;
 
   /*----- cached elements  -----*/
-// const tileImgEl = document.querySelectorAll('section > img');
+const msgEl = document.querySelector('p');
 
   /*----- event listeners -----*/
   document.querySelector('#board').addEventListener('click', handleChoice);
@@ -29,6 +32,8 @@ let loser;
   function init() {
     tiles = getShuffledTiles();
     tileSelected = null;
+    wrongTiles = 0;
+    ignoreClicks = false;
     render();
   }
   
@@ -39,6 +44,7 @@ let loser;
       console.log(imgEl)
       imgEl.src = src;
     });
+    msgEl.innerHTML = `Wrong: ${wrongTiles}`;
   }
 
   function getShuffledTiles() {
@@ -56,7 +62,25 @@ let loser;
 return tiles;
   }
 
+  //Update all impacted state, then call render ()
   function handleChoice(event) {
     const tileIdx = parseInt(event.target.id);
-    console.log(tileIdx)
+    if (isNaN(tileIdx) || ignoreClicks) return;
+    const tile = tiles[tileIdx]
+    console.log(tile)
+    if (tileSelected) {
+      if(tileSelected.img === tile.img)     {   //correct match
+        tileSelected.matched = tile.matched = true;
+      } else {
+        wrongTiles++;
+      }
+      tileSelected = null;
+    } else {
+      tileSelected = tile;
+      timer = setInterval();
+    }
+    render();
   }
+
+
+  // if (isNaN(tileIdx) || winner || )
