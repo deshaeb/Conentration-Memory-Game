@@ -16,6 +16,7 @@ let tiles; //Array of 16 shuffled card objects
 let tileSelected; //first tile clicked (tile object) or null
 let ignoreClicks;
 let wrongTiles;
+let count = 5;
 let timer;
 let winner;
 let loser;
@@ -34,6 +35,8 @@ const msgEl = document.querySelector('p');
     tileSelected = null;
     wrongTiles = 0;
     ignoreClicks = false;
+    //count = 5;
+    //timer = setInterval(handleChoice, 500);
     render();
   }
   
@@ -64,20 +67,36 @@ return tiles;
 
   //Update all impacted state, then call render ()
   function handleChoice(event) {
+   
     const tileIdx = parseInt(event.target.id);
     if (isNaN(tileIdx) || ignoreClicks) return;
     const tile = tiles[tileIdx]
     console.log(tile)
+    
     if (tileSelected) {
+      clearInterval(timer)
       if(tileSelected.img === tile.img)     {   //correct match
         tileSelected.matched = tile.matched = true;
       } else {
         wrongTiles++;
       }
-      tileSelected = null;
+      //clearInterval(timer)
+      tileSelected = null
     } else {
+      console.log(count);
       tileSelected = tile;
-      timer = setInterval();
+      timer = setInterval(() => {
+        count--;
+        console.log(count)
+        if (count === 0 ) {
+          //wrongTiles++
+          tileSelected = null
+          count = 5;
+          render()
+          clearInterval(timer) 
+        // handleChoice(event)
+      } 
+      }, 1000);
     }
     render();
   }
