@@ -1,13 +1,13 @@
   /*----- constants -----*/
 const frontTileSource = [
-  {img: '../concentrationImg/hartPlaza.jpg', matched: false},
-  {img: '../concentrationImg/riverWalk.jpg', matched: false},
-  {img: '../concentrationImg/campusMartius.jpg', matched: false},
-  {img: '../concentrationImg/comericaPark.jpg', matched: false},
-  {img: '../concentrationImg/lca.jpg', matched: false},
-  {img: '../concentrationImg/fordField.jpg', matched: false},
-  {img: '../concentrationImg/motorCity.jpg', matched: false},
-  {img: '../concentrationImg/rennBuilding.jpg', matched: false},
+  {img: 'concentrationImg/hartPlaza.jpg', matched: false},
+  {img: 'concentrationImg/riverWalk.jpg', matched: false},
+  {img: 'concentrationImg/campusMartius.jpg', matched: false},
+  {img: 'concentrationImg/comericaPark.jpg', matched: false},
+  {img: 'concentrationImg/lca.jpg', matched: false},
+  {img: 'concentrationImg/fordField.jpg', matched: false},
+  {img: 'concentrationImg/motorCity.jpg', matched: false},
+  {img: 'concentrationImg/rennBuilding.jpg', matched: false},
 ];
 const backTile = 'concentrationImg/tileBack.jpg';
 
@@ -57,6 +57,6 @@ return tiles;
   }
 
   function handleChoice(event) {
-    const tileIdx = parseInt(event.targer.id);
-    console.log(cardIdx)
+    const tileIdx = parseInt(event.target.id);
+    console.log(tileIdx)
   }
