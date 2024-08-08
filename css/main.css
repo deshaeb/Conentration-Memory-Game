@@ -27,8 +27,10 @@ header {
 }
 
 .card {
-    /*background-image: url('../concentrationImg/tileBack.jpg');*/
+    /* background-image: url('../concentrationImg/tileBack.jpg'); */
     background-size: contain;
+    width: 100px;
+    height: 100px;
 }
 
 #timer {
