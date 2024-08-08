@@ -61,7 +61,7 @@ text-align: center;
     margin-top: 20px;
 }
 
-#board > div {
+#board > img {
     height: 20vmin;
     width: 18vmin;
     border-style: solid;

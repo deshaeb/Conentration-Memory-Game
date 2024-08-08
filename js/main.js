@@ -9,7 +9,7 @@ const frontTileSource = [
   {img: '../concentrationImg/motorCity.jpg', matched: false},
   {img: '../concentrationImg/rennBuilding.jpg', matched: false},
 ];
-const backTile = '../concentrationImg/tileBack.jpg';
+const backTile = 'concentrationImg/tileBack.jpg';
 
   /*----- state variables -----*/
 let tiles; //Array of 16 shuffled card objects
@@ -35,7 +35,7 @@ let loser;
   function render() {
     tiles.forEach(function(tile, idx) {
       const imgEl = document.getElementById(idx);
-      const src = (tile.matchd || tile === tileSelected) ? tile.img : backTile;
+      const src = (tile.matched || tile === tileSelected) ? tile.img : backTile;
       console.log(imgEl)
       imgEl.src = src;
     });
