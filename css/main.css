@@ -27,20 +27,17 @@ header {
 }
 
 .card {
-    /* background-image: url('../concentrationImg/tileBack.jpg'); */
     background-size: contain;
     width: 100px;
     height: 100px;
 }
 
-#timer {
-    margin-left: auto;
-}
 
 #level {
     flex-direction: column;
     margin: auto;
     text-align: center;
+    
 } 
 
 #matches {
@@ -73,7 +70,7 @@ text-align: left;
     align-content: space-between;
     justify-content: center;
 }
- #pause {
-    margin-right: auto;
+ #displayMsg {
+    text-align: center;
     color: white;
  }
