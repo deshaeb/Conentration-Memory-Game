@@ -83,32 +83,30 @@ function handleChoice(event) {
   const tileIdx = parseInt(event.target.id);
   if (isNaN(tileIdx) || ignoreClicks) return;
   if (tileSelected1 && tileSelected2) return;
-  const tile = tiles[tileIdx]
-  console.log(tileSelected1)
-  console.log(tileSelected2)
-  if (tileSelected1 && !tileSelected2) {
-    tileSelected2 = tile;
-    render()
+  const clickedTile = tiles[tileIdx]
+  if (tileSelected1) {
+    tileSelected2 = clickedTile;
     if (tileSelected1.img === tileSelected2.img) {
       tileSelected1.matched = tileSelected2.matched = true;
       matchesMade++;
       tileSelected1 = null;
       tileSelected2 = null;
-      render()
     } else {
-      tileSelected1 = null;
-      tileSelected2 = null;
+      ignoreClicks = true;
       wrongTiles++;
       msgEl.innerHTML = `Wrong! Try Again!`
       setTimeout(() => {
+        ignoreClicks = false;
+        tileSelected1 = null;
+        tileSelected2 = null;
         render()
       }, 2000)
     }
   } else {
-    tileSelected1 = tile
+    tileSelected1 = clickedTile;
     msgEl.innerHTML = ``;
-    render()
   }
+  render()
 }
 
 function checkWinner() {
