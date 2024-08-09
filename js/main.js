@@ -12,8 +12,8 @@ const frontTileSource = [
 const backTile = 'concentrationImg/tileBack.jpg';
 
 /*----- state variables -----*/
-let tiles; //Array of 16 shuffled card objects
-let tileSelected1; //first tile clicked (tile object) or null
+let tiles; 
+let tileSelected1; 
 let tileSelected2;
 let ignoreClicks;
 let wrongTiles;
