@@ -12,6 +12,7 @@ Concentration: DETROIT CITY EDITION is a unique rendition of the classic memory 
 - JavaScript
 - HTML
 - CSS
+- Draw.io
 
 # Let's Play!
 Concentration: DETROIT CITY EDITION
@@ -21,7 +22,7 @@ Instructions:<br>
         Collect 8 matches to win! <br>
         8 wrong picks = GAME OVER! <br>
         Click 'Shuffle' to restart the game. <br>
-        Good Luck!
+        Good Luck! <br>
 https://deshaeb.github.io/Conentration-Memory-Game/
 
 # Next Steps
