@@ -30,12 +30,11 @@ const msgInstr = document.querySelector('#displayMsg');
 
 /*----- event listeners -----*/
 document.querySelector('#board').addEventListener('click', handleChoice);
-document.querySelector('#play').addEventListener('click',init);
-document.querySelector('#shuffle').addEventListener('click',init);
+document.querySelector('#play').addEventListener('click', init);
+document.querySelector('#shuffle').addEventListener('click', init);
 
 /*----- functions -----*/
 init();
-//initialize all state then call render()
 function init() {
   tiles = getShuffledTiles();
   tileSelected1 = null;
@@ -45,7 +44,7 @@ function init() {
   ignoreClicks = false;
   winner = null;
   loser = null;
-  msgInstr.innerHTML = `INSTRUCTIONS<br>
+  msgInstr.innerHTML = `Instructions:<br>
         Click 'Play!' to begin. <br>
         Select 2 tiles per turn! <br>
         Collect 8 matches to win! <br>
@@ -77,11 +76,9 @@ function getShuffledTiles() {
     let tile = tempTiles.splice(rndIdx, 1)[0];
     tiles.push(tile);
   }
-
   return tiles;
 }
 
-//Update all impacted state, then call render ()
 function handleChoice(event) {
   const tileIdx = parseInt(event.target.id);
   if (isNaN(tileIdx) || ignoreClicks) return;
@@ -98,14 +95,15 @@ function handleChoice(event) {
       tileSelected1 = null;
       tileSelected2 = null;
       render()
-  } else {
-    tileSelected1 = null;
-    tileSelected2 = null;
-    wrongTiles++;
-    msgEl.innerHTML = `Wrong! Try Again!`
-    setTimeout(() => {
-      render()
-    }, 2000)}
+    } else {
+      tileSelected1 = null;
+      tileSelected2 = null;
+      wrongTiles++;
+      msgEl.innerHTML = `Wrong! Try Again!`
+      setTimeout(() => {
+        render()
+      }, 2000)
+    }
   } else {
     tileSelected1 = tile
     msgEl.innerHTML = ``;
