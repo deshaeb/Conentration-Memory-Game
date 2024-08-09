@@ -12,10 +12,16 @@ Concentration: DETROIT CITY EDITION is a unique rendition of the classic memory 
 - JavaScript
 - HTML
 - CSS
-- CardStarter CSS Library
 
-# Getting Started
+# Let's Play!
 Concentration: DETROIT CITY EDITION
+Instructions:<br>
+        After clicking 'Play!' to begin, <br>
+        Select 2 tiles per turn! <br>
+        Collect 8 matches to win! <br>
+        8 wrong picks = GAME OVER! <br>
+        Click 'Shuffle' to restart the game. <br>
+        Good Luck!
 https://deshaeb.github.io/Conentration-Memory-Game/
 
 # Next Steps
